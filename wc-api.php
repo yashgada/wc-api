@@ -7,29 +7,6 @@
  * Author: Yash Gada
  */
 
-register_activation_hook(__FILE__, 'activation_function');
-function activation_function()
-{
-    global $wpdb;
-    $query = "CREATE TABLE wc_students (
-        s_id integer NOT NULL primary key autoincrement,
-        s_name varchar(25) NOT NULL,
-        s_age int,
-        primary key  (s_id)
-        );
-        INSERT INTO wc_students (s_name, s_age) VALUES 
-        ('Kylian Mbappe',22),
-        ('Cristiano Ronaldo',36),
-        ('Zlatan Ibrhimovic',40),
-        ('Lionel Messi',34),
-        ('Neymar jr',29),
-        ('Mezut Ozil',32);
-        ('Mezut Ozisl',322);
-        ";
-    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-    dbDelta($query);
-}
-
 function get_all_students()
 {
     global $wpdb;
